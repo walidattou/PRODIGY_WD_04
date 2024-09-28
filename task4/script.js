@@ -1,4 +1,4 @@
-const apiKey = '65869285f8mshe51711cebe7d808p100ce7jsne49b65c62112'; // Your API key
+const apiKey = '65869285f8mshe51711cebe7d808p100ce7jsne49b65c62112'; 
 
 document.getElementById("getWeatherBtn").addEventListener("click", getWeather);
 
@@ -18,7 +18,7 @@ async function getWeather() {
         const response = await fetch(url, options);
         
         if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+             throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
         const result = await response.json();
@@ -28,18 +28,15 @@ async function getWeather() {
         document.getElementById("weatherData").innerText = "Error fetching weather data.";
     }
 }
-
 function displayWeatherData(data) {
     const weatherDataDiv = document.getElementById("weatherData");
-    weatherDataDiv.innerHTML = ""; // Clear previous results
-
+    weatherDataDiv.innerHTML = ""; 
     const cityName = data.name;
-    const temperature = data.main.temp; // Current temperature
-    const feelsLike = data.main.feels_like; // Temperature feels like
-    const humidity = data.main.humidity; // Humidity percentage
-    const windSpeed = data.wind.speed; // Wind speed
-    const weatherDescription = data.weather[0].description; // Weather description
-
+    const temperature = data.main.temp; 
+    const feelsLike = data.main.feels_like; 
+    const humidity = data.main.humidity; 
+    const windSpeed = data.wind.speed; 
+    const weatherDescription = data.weather[0].description; 
     const weatherInfo = document.createElement("div");
     weatherInfo.innerHTML = `
         <h3>${cityName}</h3>
